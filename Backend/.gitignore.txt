@@ -1,0 +1,50 @@
+# .NET build folders
+bin/
+obj/
+
+# User-specific files
+.vs/
+.vscode/
+.idea/
+
+# ASP.NET user secrets
+/secrets/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files (continued)
+*.pdb
+*.dbmdl
+
+# Windows Installer temp files
+*.log
+
+# JetBrains Rider
+.idea/
+
+# ASP.NET Core development settings
+appsettings.Development.json
+
+# Local environment variables
+.env
+
+# Node.js dependencies (if you're using npm or yarn in a full-stack app)
+node_modules/
+
+# Visual Studio for Mac
+.vscode/
+
+# Windows Thumbs.db and macOS .DS_Store
+Thumbs.db
+.DS_Store
+
+# .NET Core local database files
+*.sqlite
+*.sqlite3
+
+# .NET Core backup files
+*.bak
