@@ -145,7 +145,7 @@ const TeacherEntry = ({ }) => {
 
     function RemoveImage() {
         (async () => {
-            const res = await axios.get('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/Teacher/RemoveTeacherPic?id=' + localStorage.getItem('id'));
+            const res = await axios.get('https://leaveflow.runasp.net/api/Teacher/RemoveTeacherPic?id=' + localStorage.getItem('id'));
             if (res.status == 200) {
                 alert(res.data.message)
                 setUserData(prev => ({ ...prev, profilepic: '' }));
