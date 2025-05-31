@@ -76,7 +76,7 @@ const Entry = ({children}) => {
   useEffect(() => {
     (async () => {
       console.log("id", id)
-      const res = await axios.get("http://localhost:5134/api/Consultancy/IntialLoad?userId=" + id)
+      const res = await axios.get("https://leaveflow.runasp.net/api/Consultancy/IntialLoad?userId=" + id)
       setUserData(prevUserData => ({
         ...prevUserData, // Keep the existing stats and recentActivities
         name: res.data.result.name,
