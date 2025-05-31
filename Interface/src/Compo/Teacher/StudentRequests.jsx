@@ -12,7 +12,7 @@ const StudentRequests = () => {
         (async () => {
 
             let sampleStudents = []
-            sampleStudents = await axios.get('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/teacher/LoadRegisteredStudents?userid=' + localStorage.getItem('id'))
+            sampleStudents = await axios.get('https://leaveflow.runasp.net/api/teacher/LoadRegisteredStudents?userid=' + localStorage.getItem('id'))
 
 
             const formatted = sampleStudents.data.students.map((student, index) => {
@@ -38,7 +38,7 @@ const StudentRequests = () => {
     const handleApprove = (id) => {
 
         (async () => {
-            const res = await axios.post('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/teacher/GrantStudent?id=' + id)
+            const res = await axios.post('https://leaveflow.runasp.net/api/teacher/GrantStudent?id=' + id)
             if (res.status == 200) {
                 alert(res.data.message)
                 setAccounts(prev =>

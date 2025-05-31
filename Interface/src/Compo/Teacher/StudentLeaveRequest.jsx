@@ -18,7 +18,7 @@ const LeaveRequest = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/LeaveRequests/GetRequestedLeaves?toHigherId=' + localStorage.getItem('id'))
+        const res = await axios.get('https://leaveflow.runasp.net/api/LeaveRequests/GetRequestedLeaves?toHigherId=' + localStorage.getItem('id'))
         if (res.status == 200) {
           if (res.data.leaves) {
             setLeaves(res.data.leaves)

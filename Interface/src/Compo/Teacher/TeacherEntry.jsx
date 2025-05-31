@@ -32,7 +32,7 @@ const TeacherEntry = ({ }) => {
     useEffect(() => {
         (async () => {
             try {
-                const res = await axios.get('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/Teacher/LoadClassDashboard?userId=' + localStorage.getItem('id'))
+                const res = await axios.get('https://leaveflow.runasp.net/api/Teacher/LoadClassDashboard?userId=' + localStorage.getItem('id'))
                 setUserData(res.data)
             }
             catch (err) {
@@ -62,7 +62,7 @@ const TeacherEntry = ({ }) => {
     // 
     async function checkUsername(e) {
         (async () => {
-            const res = await axios.get('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/organizations/usernameExist?username=' + e.target.value)
+            const res = await axios.get('https://leaveflow.runasp.net/api/organizations/usernameExist?username=' + e.target.value)
             if (res.data.message) {
 
                 setError("Username already exists")
@@ -86,7 +86,7 @@ const TeacherEntry = ({ }) => {
             }
             else {
                 (async () => {
-                    const res = await axios.get('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/organizations/' + localStorage.getItem('id') + `/UpdatePassword?odp=${d.currentPassword}&nwp=${d.newPassword}`)
+                    const res = await axios.get('https://leaveflow.runasp.net/api/organizations/' + localStorage.getItem('id') + `/UpdatePassword?odp=${d.currentPassword}&nwp=${d.newPassword}`)
                     if (res.status === 200) {
                         alert(res.data.message)
                         onclose()
@@ -102,7 +102,7 @@ const TeacherEntry = ({ }) => {
 
         if (d.username !== localStorage.getItem('username')) {
             (async () => {
-                const res = await axios.get('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/organizations/' + localStorage.getItem('id') + '/updateuser?username=' + d.username)
+                const res = await axios.get('https://leaveflow.runasp.net/api/organizations/' + localStorage.getItem('id') + '/updateuser?username=' + d.username)
                 if (res.status === 200) {
                     alert("User updated successfully")
                     localStorage.setItem('username', d.username)
@@ -126,14 +126,14 @@ const TeacherEntry = ({ }) => {
         data.append('Name', localStorage.getItem('username'));
 
         (async () => {
-            const res = await axios.post('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/Teacher/addTeacherPic?id=' + localStorage.getItem('id'), data, {
+            const res = await axios.post('https://leaveflow.runasp.net/api/Teacher/addTeacherPic?id=' + localStorage.getItem('id'), data, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
             if (res.status == 200) {
                 alert(res.data.message)
-                setUserData(prev => ({ ...prev, profilepic: 'https://zpc7dvw1-5134.inc1.devtunnels.ms/Uploads/Images/' + localStorage.getItem('username') + '_profile.jpg' }));
+                setUserData(prev => ({ ...prev, profilepic: 'https://leaveflow.runasp.net/Uploads/Images/' + localStorage.getItem('username') + '_profile.jpg' }));
                 formWrapper.current.classList.toggle('hidden')
 
             }

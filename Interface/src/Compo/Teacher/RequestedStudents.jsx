@@ -8,7 +8,7 @@ const RequestedStudents = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
         (async () => {
-            const res = await axios.get('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/Teacher/loadStaff?userId=' + localStorage.getItem('id'))
+            const res = await axios.get('https://leaveflow.runasp.net/api/Teacher/loadStaff?userId=' + localStorage.getItem('id'))
             if (res.status === 200) {
                 setUsers(res.data.message)
             }
@@ -24,7 +24,7 @@ const RequestedStudents = () => {
     };
 
     const onAccept = async (id) => {
-        const res = await axios.post('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/Teacher/GrantTeacher?id=' + id)
+        const res = await axios.post('https://leaveflow.runasp.net/api/Teacher/GrantTeacher?id=' + id)
         if (res.status === 200) {
             alert("Accepted")
             setUsers(prev => prev.map((org, index) =>
@@ -37,7 +37,7 @@ const RequestedStudents = () => {
     }
 
     const onDeny = async (id) => {
-        const res = await axios.post('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/Teacher/RevokeTeacher?id=' + id)
+        const res = await axios.post('https://leaveflow.runasp.net/api/Teacher/RevokeTeacher?id=' + id)
         if (res.status === 200) {
             alert("Rejected")
             setUsers(prev => prev.map((org, index) =>

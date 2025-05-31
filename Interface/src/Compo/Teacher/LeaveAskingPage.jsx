@@ -10,7 +10,7 @@ const LeaveRequestForm = () => {
     data.fromUserId = localStorage.getItem('id');
     (async () => {
       try{
-        const res = await axios.post(`https://zpc7dvw1-5134.inc1.devtunnels.ms/api/leaveRequests/AskRequest/${localStorage.getItem('role') == 'ORGHEAD'?true:false}`, data)
+        const res = await axios.post(`https://leaveflow.runasp.net/api/leaveRequests/AskRequest/${localStorage.getItem('role') == 'ORGHEAD'?true:false}`, data)
         alert(res.data.message);
         nav("/")
       }

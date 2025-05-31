@@ -20,7 +20,7 @@ const StatCard = ({ request }) => {
     // Mock action handlers
     const handleAccept = () => {
         (async () => {
-            const res = await axios.post('https://zpc7dvw1-5134.inc1.devtunnels.ms/api/LeaveRequests/GrantLeave?leaveId=' + request.leaveId + '&granted=true')
+            const res = await axios.post('https://leaveflow.runasp.net/api/LeaveRequests/GrantLeave?leaveId=' + request.leaveId + '&granted=true')
             alert(res.data.message)
         })()
     }
