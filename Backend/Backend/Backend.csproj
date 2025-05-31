@@ -16,5 +16,10 @@
       <Folder Include="Uploads\BillReciepts\" />
       <Folder Include="Uploads\Images\" />
     </ItemGroup>
+    <ItemGroup>
+        <Content Include="Resources/**/*.*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
 
 </Project>

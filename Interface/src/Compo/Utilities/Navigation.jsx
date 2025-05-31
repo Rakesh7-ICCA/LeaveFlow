@@ -42,7 +42,7 @@ const Navigation = ({classNameObj}) => {
       </ul>
     </div>
     </div>
-  </nav>
+  </nav>  
   )
 }
 
