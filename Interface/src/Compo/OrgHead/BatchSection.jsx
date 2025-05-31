@@ -145,7 +145,7 @@ const BatchSectionManager = () => {
                     )}
                 </AnimatePresence>
 
-                {selectedBatch && <BatchSectionsModal id={selectedBatch} onClose={onModalClose} batchSetFunc={setBatches} />}
+                {selectedBatch && <BatchSectionsModal id={selectedBatch} onClose={onModalClose} batchSetFunc={setBatches} name={selectedBatch.batchName} />}
 
 
 

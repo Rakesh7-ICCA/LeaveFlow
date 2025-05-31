@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FiX } from "react-icons/fi";
 import axios from "axios";
 
-const BatchSectionsModal = ({ isOpen = true, onClose, id, batchSetFunc }) => {
+const BatchSectionsModal = ({ isOpen = true, onClose, id, batchSetFunc, name}) => {
     const [sections, setSections] = useState([]);
     const [newSection, setNewSection] = useState("");
     const [showInput, setShowInput] = useState(false);
@@ -83,7 +83,7 @@ const BatchSectionsModal = ({ isOpen = true, onClose, id, batchSetFunc }) => {
                 transition={{ duration: 0.25 }}
                 className="bg-white rounded-lg p-5 w-full max-w-md mx-4 shadow-lg border border-teal-100"
             >
-                <h2 className="text-lg font-semibold mb-4 text-teal-700">Batch 2022 Sections</h2>
+                <h2 className="text-lg font-semibold mb-4 text-teal-700">{name}</h2>
 
                 <div className="space-y-2">
                     {sections && sections.map((section, index) => (
