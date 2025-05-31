@@ -81,7 +81,7 @@ const CollegeInfoModal = ({ closeThis, afterClosing, id }) => {
         alert(tempId)
 
 
-        axios.post(`http://localhost:5134/api/Consultancy/PaidReceipt?id=${tempId}`, formData, {
+        axios.post(`https://leaveflow.runasp.net/api/Consultancy/PaidReceipt?id=${tempId}`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
